@@ -21,8 +21,6 @@ def getCurrentStockData(ticker):
     current_price = stock.info['currentPrice']    
     peg_ratio = stock.info['pegRatio']
     forward_pe = stock.info['forwardPE']
-    
-
     return f'{ticker} \n\
     Current price: {current_price} $USD \n\
     PEG Ratio: {peg_ratio} \n\
@@ -95,14 +93,16 @@ def ohlcPlot(indexedDF,tick):
     #plt.show()
     return
 
-
 # Call this function with a Stock Ticker to output the Chart to the Graphs Folder
 def StockGraph(Ticker):
     dataset = getHistoricalStockData(Ticker)
     ohlcPlot(dataset,Ticker)
     
+    
 
-#tick = 'AAPL'
+
+## Other Sets of Optional Data
+#tick = 'XXXX'
 #stock = yf.Ticker(tick)
 # show actions (dividends, splits)
 #stock.actions
